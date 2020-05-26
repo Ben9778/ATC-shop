@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>用户登录注册</title>
+	<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/login.css">
+</head>
+<body>
+	<div id="header">
+		<div class="headers div0">
+			<h2>
+				<a href="www.ATCstore.com"target="blank">ATC书城<br>www.ATCstore.com</a>
+			</h2>		
+		</div>
+		<div class="headers div1">
+			<em><strong>购书就上ATC</strong></em>
+		</div>
+		<div class="headers div2">
+			<p><em><strong>全国服务热线:010-000001</strong></em></p>
+			<button class="backHome">返回首页</button>
+		</div>
+	</div>
+	<div id="section">
+		<div id="section1">
+			<span class="login span">登 陆</span>
+			<span class="regist span">注 册</span>
+			<form action="" method="post" id="login">
+				<p class="in">用 户* <input type="text" class="input" autofocus="autofocus">
+				</input></p>
+				<p class="in">密 码* <input type="password" class="input"></input></p>
+				<p class="auto">
+					<input type="checkBox" class="self" name="login_auto" value="7天内自动登录">7天内自动登录</input>
+					<span id="forget"><a href="" class="forget">忘记密码</a>|<a href="" class="forget">忘记账号</a></span>
+				</p>
+				<p>验 证 <input type="text" class="verify"></input> </p>
+				<input type="submit" value="登 陆" class="submit"></input><br>
+			</form>
+			<form action="" method="post" id="regist">
+				<p class="in">用户名* <input type="text" class="input" autofocus="autofocus">
+				</input></p>
+				<p class="in">密 码* <input type="password" class="input"></input></p>
+				<p class="in">确认密码* <input type="password" class="conform"></input></p>
+				<p class="in">邮 箱 <input type="mail" class="email"></input></p>
+				<input type="submit" value="注 册" class="submit"></input><br>
+			</form>
+		</div>
+	</div>
+
+<script type="text/javascript">
+		$(function() {
+			$(".regist").click(function(){
+				$("#login").css("display","none");
+				$("#regist").css("display","block");
+				$("#section1").css("background","rgba(78,238,148,0.5)");
+				$(this).css("background","rgba(84 ,139, 84,0.8)");
+				$(".login").css("background","rgba(0 ,238, 118,0.8)");
+			})
+			$(".login").click(function(){
+				$("#login").css("display","block");
+				$("#regist").css("display","none");
+				$("#section1").css("background","rgba(70,130,180,0.5)");
+				$(this).css("background","rgba(84 ,139, 84,0.8)");
+				$(".regist").css("background","rgba(0 ,238, 118,0.8)");
+			})
+		})
+	</script>	
+</body>
+</html>

@@ -1,0 +1,39 @@
+body{
+		width: 1000px;margin: 0;padding: 0;
+		background-image: url("../image/admin.jpg");
+		background-repeat: no-repeat;
+		background-size: 100% 100%;
+		background-attachment: fixed;
+		z-index: -100px;
+}
+div{
+	width: 300px;height: 350px;
+	margin-left: 500px;
+	margin-top: 180px;
+	background: rgba(255,255,240,0.5);
+	border-radius: 10px;
+	overflow: hidden;
+}
+form{
+	margin-top: 40px;
+	margin-left: 20px;
+}
+p{
+	font-size: 20px;
+	font-weight: bold;
+}
+#admin{text-align: center;}
+#auto{font-size: 15px;color: red;}
+.self{width: 15px;height: 15px;text-align: center;}
+.input{width: 200px;height: 30px;border-radius: 10px;outline: none;font-size: 20px;}
+.submit{
+	width: 250px;height: 40px;
+	outline: none;margin-left: 5px;
+	border-radius: 5px;
+	background: rgba(132 ,112, 255,0.8);
+	color: white;
+	font-size: 20px;
+	font-weight: bold;
+	outline: none;
+	cursor: pointer;
+}

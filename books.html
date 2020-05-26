@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>购物车</title>
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+	<link rel="stylesheet" type="text/css" href="css/books.css">
+	<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+	<style type="text/css">
+		body{background: white;}
+		#header{border-bottom: solid; border-width: 2px; border-color: rgba(0,238,238,0.7);}
+	</style>
+</head>
+<body>
+	<div id="header">
+		<div id="logo" class="headers">
+			<h2>
+				<a href="www.ATCstore.com" class="ld" target="blank">ATC书城<br>www.ATCstore.com</a>
+			</h2>		
+		</div>
+		<div id="search" class="headers">
+			<input type="search" id="search_text"></input>
+			<input type="button" id="search_button" value="搜索"></input>
+			<ul id="hotword">
+				<li>关键词:</li>
+				<li><a href="" target="blank">玄幻</a></li>
+				<li><a href="" target="blank">科技</a></li>
+				<li><a href="" target="blank">旅游</a></li>
+				<li><a href="" target="blank">摄影</a></li>
+				<li><a href="" target="blank">体育</a></li>
+			</ul>
+		</div>
+		<div id="count" class="headers">
+			<p><em><strong>全国服务热线:010-000001</strong></em></p>
+			hi~<a href="" target="blank" style="color: red;"> 点这里登陆哟</a>
+			&nbsp;<a href="" target="blank" style="color: blue;">免费注册</a>
+			&nbsp;<a href="" target="blank" style="color: orange;">购物车</a>
+			&nbsp;<a href="" target="blank" style="color: orange;">足迹</a>
+			&nbsp;<a href="" target="blank" style="color: orange;">订单</a>
+		</div>
+	</div>
+	<div id="section">
+		<table>
+			<tr class="row">
+				<td>
+					<input type="checkBox" id="select"></input>
+					<label for="select">全选</label>
+				</td>
+				<td>商品信息</td>
+				<td>单价(元)</td>
+				<td>数量</td>
+				<td>优惠</td>
+				<td>小计(元)</td>
+			</tr>
+			<br>
+			<tr class="row">
+				<td>
+					<input type="checkBox" class="select"></input>
+				</td>
+				<td>
+					<a href=""><img src="" alt="图书"></a>
+				</td>
+				<td>20.00</td>
+				<td>
+					<input type="number" max="" value="1" min="0"></input>
+				</td>
+				<td>五折</td>
+				<td>20.00</td>
+				<td> 
+					<button>删除</button>
+				</td>
+			</tr>
+			<tr class="row">
+				<td>
+					<input type="checkBox" class="select"></input>
+				</td>
+				<td>
+					<a href=""><img src="" alt="图书"></a>
+				</td>
+				<td>20.00</td>
+				<td>
+					<input type="number" max="" value="1" min="0"></input>
+				</td>
+				<td>五折</td>
+				<td>20.00</td>
+				<td> 
+					<button>删除</button>
+				</td>
+			</tr>
+			<tr class="row">
+				<td>
+					<input type="checkBox" class="select"></input>
+				</td>
+				<td>
+					<a href=""><img src="" alt="图书"></a>
+				</td>
+				<td>20.00</td>
+				<td>
+					<input type="number" max="" value="1" min="0"></input>
+				</td>
+				<td>否</td>
+				<td>20.00</td>
+				<td> 
+					<button>删除</button>
+				</td>
+			</tr>
+			<tr class="row">
+				<td>
+					<input type="checkBox" class="select"></input>
+				</td>
+				<td>
+					<a href=""><img src="" alt="图书"></a>
+				</td>
+				<td>20.00</td>
+				<td>
+					<input type="number" max="" value="1" min="0"></input>
+				</td>
+				<td>否</td>
+				<td>20.00</td>
+				<td> 
+					<button>删除</button>
+				</td>
+			</tr>
+			<tr class="row">
+				<td>
+					<input type="checkBox" class="select"></input>
+				</td>
+				<td>
+					<a href=""><img src="" alt="图书"></a>
+				</td>
+				<td>20.00</td>
+				<td>
+					<input type="number" max="" value="1" min="0"></input>
+				</td>
+				<td>否</td>
+				<td>20.00</td>
+				<td> 
+					<button>删除</button>
+				</td>
+			</tr>
+		</table>
+		<div id="section1">
+			<button class="del">批量删除</button>
+			<button class="pay">结 算</button>
+			<span classs="all">商品总计: <strong>100</strong>元</span>
+		</div>
+	</div>
+	<!--隐藏内容-->
+		<div id="hide">
+			<p><strong>确定删除所选商品?</strong></p>
+			<button class="yes">是</button>
+			<button class="no">否</button>
+		</div>
+	<script type="text/javascript">
+		var isCheckAll = false;
+		$(function(){
+			$("#select").click(function(){
+        		if (isCheckAll) {
+					$(".select").each(function() {
+						this.checked = false;
+				});
+					isCheckAll = false;
+			} else {
+				$(".select").each(function() {
+					this.checked = true;
+				});
+					isCheckAll = true;
+				}
+			})
+			$(".del").click(function(){
+				$("#hide").css("display","block");
+				$("#section").css("background","gray").css("opacity","0.3");
+			})
+			$(".no").click(function(){
+				$("#hide").css("display","none");
+				$("#section").css("background","rgba(0,238,118,0.8)").css("opacity","1");
+			})
+			$(".yes").click(function(){
+				$("#hide").css("display","none");
+				$("#section").css("background","rgba(0,238,118,0.8)").css("opacity","1");
+				$("#section table").empty();
+				$("#section1").remove();
+			})
+		})
+	</script>
+</body>
+</html>

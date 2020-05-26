@@ -1,0 +1,19 @@
+#section{
+		width: 100%;
+		height: 80%;
+		text-align: center;
+		overflow: hidden;
+		background: rgba(0,238,118,0.8);
+}
+table{margin: 20px auto;padding: 0;}
+.row,td{padding: 20px;}
+table{border-width: 2px;border-color:rgba(220 220 220,0.7);border-style: solid;}
+#section1{width: 100%;height: auto;margin-left: 280px;}
+#hide{
+		position: absolute;top:260px;left: 550px;
+		padding: 5px;
+		background: rgba(255,240,245,0.8);
+		border: solid 1px rgba(0,0,0,0.3);
+		text-align: center;
+		display: none;
+}
